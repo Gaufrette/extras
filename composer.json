@@ -32,5 +32,10 @@
         "psr-4": {
             "Gaufrette\\Extras\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Gaufrette\\Extras\\Tests\\": "tests/"
+        }
     }
 }
