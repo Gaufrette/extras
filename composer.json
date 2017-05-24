@@ -1,0 +1,27 @@
+{
+    "name": "gaufrette/extras",
+    "description": "Provides extra features (prefixed fs, resolvable fs) to Gaufrette",
+    "type": "library",
+    "require": {
+        "knplabs/gaufrette": "dev-master"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^3.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Albin Kerouanton",
+            "email": "albin.kerouanton@knplabs.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config": {
+        "bin-dir": "bin/"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gaufrette\\Extras\\": "src/"
+        }
+    }
+}
