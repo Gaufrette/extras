@@ -13,6 +13,14 @@
         {
             "name": "Albin Kerouanton",
             "email": "albin.kerouanton@knplabs.com"
+        },
+        {
+            "name": "KnpLabs Team",
+            "homepage": "http://knplabs.com"
+        },
+        {
+            "name":     "The contributors",
+            "homepage": "http://github.com/Gaufrette/extras/contributors"
         }
     ],
     "minimum-stability": "stable",
