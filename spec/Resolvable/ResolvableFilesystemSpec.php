@@ -9,7 +9,6 @@ use Gaufrette\File;
 use Gaufrette\FilesystemInterface;
 use Gaufrette\Stream;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class ResolvableFilesystemSpec extends ObjectBehavior
 {
