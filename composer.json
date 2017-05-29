@@ -6,7 +6,8 @@
         "knplabs/gaufrette": "dev-master"
     },
     "require-dev": {
-        "phpspec/phpspec": "^3.4"
+        "phpspec/phpspec": "^3.4",
+        "phpunit/phpunit": "^5"
     },
     "license": "MIT",
     "authors": [
