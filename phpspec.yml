@@ -1,0 +1,4 @@
+suites:
+    default:
+        namespace: Gaufrette\Extras
+        psr4_prefix: Gaufrette\Extras
