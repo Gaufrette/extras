@@ -3,7 +3,7 @@
     "description": "Provides extra features (prefixed fs, resolvable fs) to Gaufrette",
     "type": "library",
     "require": {
-        "knplabs/gaufrette": "dev-master"
+        "knplabs/gaufrette": "0.*@dev"
     },
     "require-dev": {
         "phpspec/phpspec": "^3.4",
