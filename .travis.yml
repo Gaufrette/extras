@@ -16,6 +16,7 @@ php:
 
 before_script:
   - composer self-update && composer install --prefer-source --no-interaction
+  - if [[ ${TRAVIS_PHP_VERSION:0:1} == "5" ]]; then composer update --prefer-lowest && composer update knplabs/gaufrette; fi
 
 script:
   - php bin/phpspec run -fpretty --verbose

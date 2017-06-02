@@ -2,6 +2,11 @@
 
 namespace Gaufrette\Extras\Resolvable;
 
+/**
+ * Resolves an object path into an URI.
+ *
+ * @author Albin Kerouanton <albin.kerouanton@knplabs.com>
+ */
 interface ResolverInterface
 {
     /**

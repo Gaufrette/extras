@@ -6,6 +6,8 @@ use Gaufrette\Extras\Resolvable\ResolverInterface;
 
 /**
  * Resolves object path by prepending a static prefix.
+ *
+ * @author Albin Kerouanton <albin.kerouanton@knplabs.com>
  */
 class StaticUrlResolver implements ResolverInterface
 {

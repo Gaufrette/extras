@@ -8,6 +8,8 @@ use Gaufrette\Extras\Resolvable\ResolverInterface;
 /**
  * Resolves object paths into time-limited URLs, namely presigned URLs.
  *
+ * @author Albin Kerouanton <albin.kerouanton@knplabs.com>
+ *
  * @see http://docs.aws.amazon.com/AmazonS3/latest/dev/ShareObjectPreSignedURL.html
  */
 class AwsS3PresignedUrlResolver implements ResolverInterface
@@ -43,10 +45,20 @@ class AwsS3PresignedUrlResolver implements ResolverInterface
      *
      * @param string $path
      *
-     * @return (string) \Psr\Http\Message\UriInterface
+     * @return string
      */
     public function resolve($path)
     {
+        // For AWS SDK v2
+        if ($this->service instanceof \Aws\Common\Client\AbstractClient) {
+            return $this->service->getObjectUrl(
+                $this->bucket,
+                $this->computePath($path),
+                $this->expiresAt
+            );
+        }
+
+        // For AWS SDK v3
         $command = $this->service->getCommand('GetObject', [
             'Bucket' => $this->bucket,
             'Key'    => $this->computePath($path),

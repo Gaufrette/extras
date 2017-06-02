@@ -6,7 +6,9 @@ use Aws\S3\S3Client;
 use Gaufrette\Extras\Resolvable\ResolverInterface;
 
 /**
- * Resolves objects' path into public URLs.
+ * Resolves path of public objects into URLs.
+ *
+ * @author Albin Kerouanton <albin.kerouanton@knplabs.com>
  */
 class AwsS3PublicUrlResolver implements ResolverInterface
 {
