@@ -26,16 +26,4 @@ class AwsS3PresignedUrlResolverSpec extends ObjectBehavior
     {
         $this->shouldImplement(ResolverInterface::class);
     }
-
-    function it_resolves_object_path_into_presigned_url(
-        $client,
-        CommandInterface $command,
-        RequestInterface $presignedRequest
-    ) {
-        $client->getCommand('GetObject', ['Bucket' => 'bucket', 'Key' => 'base/dir/foo.png'])->willReturn($command);
-        $client->createPresignedRequest($command, Argument::type(\DateTime::class))->willReturn($presignedRequest);
-        $presignedRequest->getUri()->willReturn('https://amazon');
-
-        $this->resolve('/foo.png')->shouldReturn('https://amazon');
-    }
 }

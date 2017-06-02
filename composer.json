@@ -8,7 +8,7 @@
     "require-dev": {
         "phpspec/phpspec": "^3.4",
         "phpunit/phpunit": "~5.5",
-        "aws/aws-sdk-php": "~3"
+        "aws/aws-sdk-php": "~2.4|~3"
     },
     "license": "MIT",
     "authors": [

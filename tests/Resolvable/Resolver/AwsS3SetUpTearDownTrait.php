@@ -27,6 +27,18 @@ trait AwsS3SetUpTearDownTrait
         }
 
         $this->bucket = uniqid(getenv('AWS_BUCKET'));
+
+        // For AWS SDK v2
+        if (class_exists('Aws\Common\Client\AbstractClient')) {
+            return $this->client = S3Client::factory([
+                'region' => $region ? $region : 'eu-west-1',
+                'version' => '2006-03-01',
+                'key' => $key,
+                'secret' => $secret,
+            ]);
+        }
+
+        // For AWS SDK v3
         $this->client = new S3Client([
             'region'      => $region ? $region : 'eu-west-1',
             'version'     => 'latest',
