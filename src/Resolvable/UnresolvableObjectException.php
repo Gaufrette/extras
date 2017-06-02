@@ -2,6 +2,11 @@
 
 namespace Gaufrette\Extras\Resolvable;
 
+/**
+ * Exception thrown by the filesystem when resolution fail.
+ *
+ * @author Albin Kerouanton <albin.kerouanton@knplabs.com>
+ */
 class UnresolvableObjectException extends \Exception
 {
     /**

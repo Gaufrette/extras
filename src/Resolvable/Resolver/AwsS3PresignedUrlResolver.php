@@ -8,6 +8,8 @@ use Gaufrette\Extras\Resolvable\ResolverInterface;
 /**
  * Resolves object paths into time-limited URLs, namely presigned URLs.
  *
+ * @author Albin Kerouanton <albin.kerouanton@knplabs.com>
+ *
  * @see http://docs.aws.amazon.com/AmazonS3/latest/dev/ShareObjectPreSignedURL.html
  */
 class AwsS3PresignedUrlResolver implements ResolverInterface

@@ -4,6 +4,26 @@ namespace Gaufrette\Extras\Resolvable;
 
 use Gaufrette\FilesystemInterface;
 
+/**
+ * Filesystem decorator providing resolve() method to resolve an object path into URI.
+ *
+ * Example:
+ *     $client     = // AwsS3 client instantiation
+ *     $decorated  = new Filesystem(new AwsS3($client, 'my_bucket', ['directory' => 'root/dir']));
+ *     $filesystem = new ResolvableFilesystem(
+ *         $decorated,
+ *         new AwsS3PresignedUrlResolver($client, 'my_bucket', 'root/dir')
+ *     );
+ *
+ *      try {
+ *          // should return something like "https://eu-west-1.blabla.aws.com/my_bucket/root/dir/foo/bar.png?token
+ *          var_dump($filesystem->resolve('foo/bar.png'));
+ *      } catch (ResolverException $e) {
+ *
+ *      }
+ *
+ * @author Albin Kerouanton <albin.kerouanton@knplabs.com>
+ */
 class ResolvableFilesystem implements FilesystemInterface
 {
     /** @var FilesystemInterface */
