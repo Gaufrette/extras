@@ -19,7 +19,7 @@ In order to use it, you have to pass the decorated Filesystem and a Resolver:
     $decorated  = new Filesystem(new AwsS3($client, 'my_bucket', ['directory' => 'root/dir']));
     $filesystem = new ResolvableFilesystem(
         $decorated,
-        new AwsS3PresignedUrlResolver($client, 'my_bucket', 'root/dir')
+        new AwsS3PresignedUrlResolver($client, 'my_bucket', 'root/dir', new \DateTime('+ 1 hour'))
     );
 
 Then you can call `resolve($key)`:
